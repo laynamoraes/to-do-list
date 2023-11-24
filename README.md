@@ -7,9 +7,11 @@
 
 <br>
 
-<p align="center">
-  <img alt="Preview do projeto" src="./assets/preview.gif">
-</p>
+
+
+https://github.com/laynamoraes/to-do-list/assets/111987747/912f47b1-1f62-43eb-b607-501407467307
+
+
 
 Acesse o projeto aqui 👉🏻 https://laynamoraes.github.io/to-do-list/
 
