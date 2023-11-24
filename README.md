@@ -7,6 +7,14 @@
 
 <br>
 
+<p align="center">
+  <img alt="Preview do projeto" src="./assets/preview.gif">
+</p>
+
+Acesse o projeto aqui 👉🏻 https://laynamoraes.github.io/to-do-list/
+
+<br>
+
 ## 💻 Projeto
 
 O projeto é uma lista de tarefas (to do list). Tal projeto foi proposto na aula do curso **Vem Ser Tech - Front-End da Ada Tech em parceria com o iFood** e dentro as funcionalidades exigidas estão:
