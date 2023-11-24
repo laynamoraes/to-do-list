@@ -168,6 +168,12 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease-in;
+  opacity: 0;
+}
+
+.tarefa:hover .tarefa-botao-editar,
+.tarefa:hover .tarefa-botao-deletar {
+  opacity: 1;
 }
 
 .tarefa-botao-editar:hover {
@@ -184,6 +190,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease-in;
+  opacity: 0;
 }
 
 .tarefa-botao-deletar:hover {
@@ -200,9 +207,49 @@ body {
   padding-left: 33px;
 }
 
-.tarefa:hover .tarefa-descricao {
+.tarefa:hover .tarefa-descricao,
+.tarefa:hover .tarefa-id {
   height: auto;
   opacity: 1;
   overflow: visible;
   padding-top: 20px;
+}
+
+.tarefa-id {
+  font-size: 0.75rem;
+  padding-top: 5px;
+  padding-left: 33px;
+  text-align: end;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 1s ease-in-out, height 5s ease-in-out,
+    overflow 1s ease-in-out;
+  cursor: default;
+}
+
+.tarefa-encontrada {
+  animation: tarefaEncontraAnimation 1s linear;
+}
+
+@keyframes tarefaEncontraAnimation {
+  0% {
+    background-color: #3d3d58;
+  }
+
+  25% {
+    background-color: #24243a;
+  }
+
+  50% {
+    background-color: #3d3d58;
+  }
+
+  75% {
+    background-color: #24243a;
+  }
+
+  100% {
+    background-color: #3d3d58;
+  }
 }

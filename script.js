@@ -1,6 +1,9 @@
 const botaoNovaTarefa = document.querySelector(".botao-nova-tarefa")
 const botaoAdicionarNovaTarefa = document.querySelector(".adicionar-tarefa")
+const botaoFinalizarEdicao = document.querySelector(".finalizar-edicao")
+const botaoPesquisarId = document.querySelector(".botao-pesquisar")
 const secaoNovaTarefa = document.querySelector(".nova-tarefa")
+const secaoEditarTarefa = document.querySelector(".editar-tarefa")
 const listaTarefas = document.querySelector(".tarefas")
 
 let minhasTarefas = []
@@ -39,12 +42,15 @@ function mostrarTarefas() {
             </div>
           </div>
           <p class="tarefa-descricao">${tarefa.descricao}</p>
+          <p class="tarefa-id">ID: ${tarefa.id}</p>
         </div>
     `
-
       listaTarefas.innerHTML = renderizarTarefa
+
+      localStorage.setItem("tarefas", JSON.stringify(minhasTarefas))
     })
   }
+  console.log(minhasTarefas)
 }
 
 mostrarTarefas()
@@ -81,17 +87,83 @@ function adicionarTarefa() {
   mostrarTarefas()
 }
 
+let idTarefaEditada = ""
+
 function deletarTarefa(index) {
+  localStorage.removeItem("tarefas")
   minhasTarefas.splice(index, 1)
-  console.log(index)
 
   mostrarTarefas()
 }
 
 function editarTarefa(index) {
-  listaTarefas.forEach((tarefa) => {
-    console.log(tarefa)
-  })
-  // minhasTarefas[index]
-  console.log("editou")
+  let inputEditarTitulo = document.getElementById("editar-tarefa-titulo")
+  let inputEditarDescricao = document.getElementById("editar-tarefa-descricao")
+  const idEditarTarefa = minhasTarefas[index].id
+  idTarefaEditada = idEditarTarefa
+
+  if (secaoEditarTarefa.classList.contains("hidden")) {
+    secaoEditarTarefa.classList.remove("hidden")
+  } else {
+    secaoEditarTarefa.classList.add("hidden")
+  }
+
+  inputEditarTitulo.value = minhasTarefas[index].titulo
+  inputEditarDescricao.value = minhasTarefas[index].descricao
+
+  console.log(idEditarTarefa)
+
+  minhasTarefas.splice(index, 1)
+
+  mostrarTarefas()
 }
+
+botaoFinalizarEdicao.addEventListener("click", finalizarTarefaEditada)
+
+function finalizarTarefaEditada(index) {
+  let inputEditarTitulo = document.getElementById("editar-tarefa-titulo")
+  let inputEditarDescricao = document.getElementById("editar-tarefa-descricao")
+  const idEditarTarefa = idTarefaEditada
+
+  const tarefaEditada = {
+    id: idEditarTarefa,
+    titulo: inputEditarTitulo.value,
+    descricao: inputEditarDescricao.value,
+  }
+
+  minhasTarefas.splice(index, 0, tarefaEditada)
+
+  inputEditarTitulo.value = ""
+  inputEditarDescricao.value = ""
+
+  secaoEditarTarefa.classList.add("hidden")
+
+  mostrarTarefas()
+}
+
+botaoPesquisarId.addEventListener("click", pesquisarTarefa)
+
+function pesquisarTarefa() {
+  let inputPesquisarId = document.querySelector(".pesquisar-tarefa-id")
+  const tarefaId = document.getElementById(inputPesquisarId.value)
+
+  if (tarefaId === null) {
+    alert("Tarefa não encontrada!")
+    inputPesquisarId.value = ""
+  } else {
+    tarefaId.classList.toggle("tarefa-encontrada")
+    inputPesquisarId.value = ""
+  }
+}
+
+function recarregarTarefasDoLocalStorage() {
+  const tarefasLocalStorage = localStorage.getItem("tarefas")
+
+  if (tarefasLocalStorage) {
+    minhasTarefas = JSON.parse(tarefasLocalStorage)
+  }
+
+  mostrarTarefas()
+}
+
+recarregarTarefasDoLocalStorage()
