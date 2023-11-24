@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 50px 0;
+  padding: 0 20px;
+  background-color: #1e1e2c;
+  color: #fff;
+}
+
+.container {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #2d2d44;
+  border-radius: 30px;
+}
+
+.cabecalho {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.botao-nova-tarefa,
+.botao-pesquisar {
+  padding: 5px 10px;
+  background-color: #21bce5;
+  border: none;
+  border-radius: 30px;
+  color: #1e1e2c;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.botao-nova-tarefa {
+  margin-right: 5px;
+}
+
+.botao-nova-tarefa:hover,
+.botao-pesquisar:hover,
+.adicionar-tarefa:hover,
+.finalizar-edicao:hover {
+  background-color: #16a6cb;
+}
+
+.pesquisar-tarefa {
+  display: flex;
+  justify-content: left;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.pesquisar-tarefa-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.nova-tarefa,
+.editar-tarefa {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.pesquisar-tarefa-id {
+  padding: 6px 10px;
+  color: #1e1e2c;
+  border: none;
+}
+
+.nova-tarefa-titulo,
+.nova-tarefa-descricao,
+.editar-tarefa-titulo,
+.editar-tarefa-descricao {
+  padding: 6px 10px;
+  margin-bottom: 15px;
+  color: #1e1e2c;
+  border: none;
+}
+
+.adicionar-tarefa,
+.finalizar-edicao {
+  background-color: #21bce5;
+  border: none;
+  border-radius: 30px;
+  color: #1e1e2c;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.tarefa {
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  background-color: #3d3d58;
+}
+
+.tarefa-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.tarefa-titulo-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  gap: 15px;
+}
+
+.tarefa-titulo-container input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+}
+
+.tarefa-titulo-container input[type="checkbox"]:checked {
+  background-color: #26cc28;
+}
+
+.tarefa-titulo-container input[type="checkbox"]:checked:after {
+  content: url(./assets/check.svg);
+}
+
+.tarefa-titulo {
+  font-size: 1.125rem;
+  cursor: default;
+}
+
+.tarefa-botoes {
+  display: flex;
+  gap: 5px;
+}
+
+.tarefa-botao-editar {
+  padding: 5px 10px;
+  background-color: #21bce5;
+  border: none;
+  border-radius: 30px;
+  color: #1e1e2c;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.tarefa-botao-editar:hover {
+  background-color: #16a6cb;
+}
+
+.tarefa-botao-deletar {
+  padding: 5px 10px;
+  background-color: #ed2121;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.tarefa-botao-deletar:hover {
+  background-color: #d11a1a;
+}
+
+.tarefa-descricao {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 1s ease-in-out, height 5s ease-in-out,
+    overflow 1s ease-in-out;
+  cursor: default;
+  padding-left: 33px;
+}
+
+.tarefa:hover .tarefa-descricao {
+  height: auto;
+  opacity: 1;
+  overflow: visible;
+  padding-top: 20px;
+}

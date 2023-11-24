@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Minhas Tarefas</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cabecalho">
+        <h1>Minhas Tarefas 📜</h1>
+
+        <button class="botao-nova-tarefa">+ Nova tarefa</button>
+      </div>
+
+      <div class="pesquisar-tarefa">
+        <div class="pesquisar-tarefa-content">
+          <label for="pesquisar-tarefa-id">Pesquisar por ID da tarefa:</label>
+          <input
+            id="pesquisar-tarefa-id"
+            class="pesquisar-tarefa-id"
+            type="number"
+            placeholder="Informe o ID da tarefa"
+          />
+        </div>
+        <button class="botao-pesquisar">Pesquisar</button>
+      </div>
+
+      <div class="nova-tarefa hidden">
+        <label for="nova-tarefa-titulo">Título da tarefa:</label>
+        <input
+          id="nova-tarefa-titulo"
+          class="nova-tarefa-titulo"
+          type="text"
+          placeholder="Escreva o título da tarefa"
+        />
+        <label for="nova-tarefa-descricao">Descrição da tarefa:</label>
+        <input
+          id="nova-tarefa-descricao"
+          class="nova-tarefa-descricao"
+          type="text"
+          placeholder="Escreva a descrição da tarefa"
+        />
+        <button class="adicionar-tarefa">ADICIONAR TAREFA</button>
+      </div>
+
+      <div class="editar-tarefa hidden">
+        <label for="editar-tarefa-titulo">Título da tarefa:</label>
+        <input
+          id="editar-tarefa-titulo"
+          class="editar-tarefa-titulo"
+          type="text"
+          placeholder="Escreva o título da tarefa"
+        />
+        <label for="editar-tarefa-descricao">Descrição da tarefa:</label>
+        <input
+          id="editar-tarefa-descricao"
+          class="editar-tarefa-descricao"
+          type="text"
+          placeholder="Escreva a descrição da tarefa"
+        />
+        <button class="finalizar-edicao">FINALIZAR EDIÇÃO</button>
+      </div>
+
+      <div class="tarefas"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
