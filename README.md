@@ -26,8 +26,7 @@ O projeto é uma lista de tarefas (to do list). Tal projeto foi proposto na aula
 - remover uma tarefa salva
 - obter uma tarefa através de um parâmetro
 - utilizar array para armazenar a lista de tarefas cadastradas
-
-Extra: utilização do Local Storage para armazenamento das tarefas.
+- utilização do Local Storage para armazenamento das tarefas.
 
 <br>
 
